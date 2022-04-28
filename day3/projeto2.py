@@ -21,34 +21,24 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
 ''')
 print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.") 
-
-#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+print("Your mission is to find the treasure.")
 
 #Write your code below this line 👇
 
-start = input("Vamos começar? escolha seu caminho!!seguir direita ou esquerda? ")
-start_lower = start.lower()
-
-if start == "esquerda": 
-  fase2 = input("Você chegou a floresta perdida! seguir para direita ou esquerda? ")
-  fase2_lower = fase2.lower()
+choice1 = input('You\'re at a cross road. Where do you want to go? Type "left" or "right" \n').lower()
+if choice1 == "left":
+  choice2 = input('You\'ve come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across. \n').lower()
+  if choice2 == "wait":
+    choice3 = input("You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose? \n").lower()
+    if choice3 == "red":
+      print("It's a room full of fire. Game Over.")
+    elif choice3 == "yellow":
+      print("You found the treasure! You Win!")
+    elif choice3 == "blue":
+      print("You enter a room of beasts. Game Over.")
+    else:
+      print("You chose a door that doesn't exist. Game Over.")
+  else:
+    print("You get attacked by an angry trout. Game Over.")
 else:
-  print("Você morreu!! acabou pisando em falso e caiu do barranco. F")
-  
-if fase2 == "esquerda": 
-  fase3 = input("Você encontrou a caverna secreta! entrar ou desviar dela? ")
-  fase3_lower = fase3.lower()
-else:
-  print("Você morreu!!! infelizmente deu de cara com uma tribo índigena canibais.")
-  
-if fase3 == "entrar": 
-  fase4 = input("Você entrou na caverna dos mortos!! seguir direita ou esquerda?  ")
-  fase4_lower = fase4.lower()
-else:
-  print("Você morreu!! infelizmente deu de cara com um Urso faminto!.")
-  
-if fase4 == "direita":
-  print("Você chegou ao tesouro!! Parabéns você venceu.")
-else: 
-  print("Você caiu em uma armadilha e morreu! GAME OVER.")
+  print("You fell into a hole. Game Over.")
